@@ -14,7 +14,7 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 fc-cache -fv | grep NerdFonts
 if [ $? -ne 0 ]; then
-	git clone --depth 1 https://github.com/ryanoasis/nerd-fonts ~/
+	[ ! -d ~/nerd-fonts ] && git clone --depth 1 https://github.com/ryanoasis/nerd-fonts ~/nerd-fonts
 	cd ~/nerd-fonts
 	chmod +x install.sh
 	sudo ./install.sh
@@ -25,7 +25,7 @@ rustup install stable
 
 cd $(dirname $0)/..
 
-stow --target="$HOME" nvim-astro
+stow --target="$HOME" ./nvimdots
 
 nvim --headless -c 'quitall'
 nvim --headless -c 'autocmd User LazyDone quitall'
