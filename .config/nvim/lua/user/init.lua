@@ -1,59 +1,3 @@
-local themeFile = os.getenv("HOME") .. "/.config/bspwm/.rice"
-local f = io.open(themeFile, "r")
-
-local nvim_theme
-local rice
-
-if f ~= nil then
-	rice = f:read("*all")
-	f:close()
-end
-
--- Choose a neovim theme that approximately matches the current rice
-if rice == "kahzia" then
-	nvim_theme = "catppuccin"
-elseif rice == "gruvbox" then
-	nvim_theme = "gruvbox-baby"
-elseif rice == "gruvmat" then
-	nvim_theme = "gruvbox-baby"
-elseif rice == "dracula" then
-	nvim_theme = "dracula"
-elseif rice == "solarized" then
-	nvim_theme = "neosolarized"
-elseif rice == "aline" then
-	nvim_theme = "nord"
-elseif rice == "andrea" then
-	nvim_theme = "nord"
-elseif rice == "ayu" then
-	nvim_theme = "monokai-pro"
-elseif rice == "cristina" then
-	nvim_theme = "nord"
-elseif rice == "cynthia" then
-	nvim_theme = "tokyonight"
-elseif rice == "doombox" then
-	nvim_theme = "gruvbox-baby"
-elseif rice == "dune" then
-	nvim_theme = "desert"
-elseif rice == "emilia" then
-	nvim_theme = "neosolarized"
-elseif rice == "isabel" then
-	nvim_theme = "catppuccin-mocha"
-elseif rice == "jan" then
-	nvim_theme = "tokyonight"
-elseif rice == "karla" then
-	nvim_theme = "habamax"
-elseif rice == "melissa" then
-	nvim_theme = "nord"
-elseif rice == "pamela" then
-	nvim_theme = "catppuccin"
-elseif rice == "silvia" then
-	nvim_theme = "gruvbox-baby"
-elseif rice == "z0mbi3" then
-	nvim_theme = "catppuccin"
-else
-	nvim_theme = "catppuccin"
-end
-
 return {
 	-- Configure AstroNvim updates
 	updater = {
@@ -74,11 +18,11 @@ return {
 	},
 
 	-- Set colorscheme to use
-	colorscheme = nvim_theme,
+	colorscheme = "gruvbox-baby",
+	--colorscheme = "catpuccin",
 	--colorscheme = "dracula",
 	--colorscheme = "nord-nvim",
 	--colorscheme = "gruvbox",
-	--colorscheme = "gruvbox-baby",
 	--colorscheme = "tokyonight",
 	--colorscheme = "monokai-pro",
 
