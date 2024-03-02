@@ -34,6 +34,31 @@ return {
 				"<cmd>JdtWipeDataAndRestart<cr>",
 				desc = "Java Wipe Workspace And Restart JDTLS",
 			},
+			{
+				"<leader>jG",
+				"<cmd>lua require('jdtls.tests').generate()<cr>",
+				desc = "Generate Java tests",
+			},
+			{
+				"<leader>js",
+				"<cmd>lua require('jdtls.tests').goto_subjects()<cr>",
+				desc = "Goto Java class under test",
+			},
+			{
+				"<leader>jp",
+				"<cmd>lua require('jdtls').pick_test(true)<cr>",
+				desc = "Pick a test to run from the current file",
+			},
+			{
+				"<leader>jb",
+				"<cmd>lua require('jdtls').build_projects(true)<cr>",
+				desc = "Build the project",
+			},
+			{
+				"<leader>jT",
+				"<cmd>lua require('dap.repl').toggle()<cr>",
+				desc = "Toggle the DAP state window - e.g. to see junit summary",
+			},
 		},
 	},
 
