@@ -3,14 +3,12 @@
 rm -rf ~/.cache/jdtls
 rm -rf ~/.cache/nvim
 
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.config/nvim ~/.config/nvim.bak
+[ -d ~/.local/share/nvim ] && mv ~/.local/share/nvim ~/.local/share/nvim.bak
+[ -d ~/.local/state/nvim ] && mv ~/.local/state/nvim ~/.local/state/nvim.bak
+[ -d ~/.config/nvim ] && mv ~/.config/nvim ~/.config/nvim.bak
 
 sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
-
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 fc-cache -fv | grep NerdFonts
 if [ $? -ne 0 ]; then
