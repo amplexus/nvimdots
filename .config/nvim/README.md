@@ -1,8 +1,8 @@
-# AstroNvim Template
+# AstroNvim
 
 **NOTE:** This is for AstroNvim v4+
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+A neovim setup using [AstroNvim](https://github.com/AstroNvim/AstroNvim) that is tuned for javascript/typescript + java + C development.
 
 ## 🛠️ Installation
 
@@ -15,16 +15,14 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Create a new user repository from this template
+#### Fork this repository
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+Fork the following repo into your own github account: [nvimdots](https://github.com/amplexus/nvimdots)
 
 #### Clone the repository
 
 ```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+git clone https://github.com/<your-repo>/nvimdots ~/.config/nvim
 ```
 
 #### Start Neovim
