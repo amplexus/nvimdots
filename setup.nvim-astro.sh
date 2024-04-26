@@ -7,6 +7,10 @@ rm -rf ~/.cache/nvim
 [ -d ~/.local/state/nvim ] && mv ~/.local/state/nvim ~/.local/state/nvim.bak
 [ -d ~/.config/nvim ] && mv ~/.config/nvim ~/.config/nvim.bak
 
+# Needed by neovim -> mason
+which composer || sudo apt install composer
+which julia || sudo snap install julia --classic
+
 sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
