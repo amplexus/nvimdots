@@ -11,14 +11,14 @@ return {
 		lazy = false,
 	},
 
-	"andweeb/presence.nvim",
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "BufRead",
-		config = function()
-			require("lsp_signature").setup()
-		end,
-	},
+	-- "andweeb/presence.nvim",
+	-- {
+	-- 	"ray-x/lsp_signature.nvim",
+	-- 	event = "BufRead",
+	-- 	config = function()
+	-- 		require("lsp_signature").setup()
+	-- 	end,
+	-- },
 
 	-- == Examples of Overriding Plugins ==
 
@@ -56,6 +56,14 @@ return {
 		end,
 	},
 
+	-- {
+	-- 	"barrett-ruth/import-cost.nvim",
+	-- 	build = "sh install.sh npm",
+	-- 	config = function()
+	-- 		require("import-cost").setup()
+	-- 	end,
+	-- },
+
 	{
 		"windwp/nvim-autopairs",
 		config = function(plugin, opts)
@@ -83,6 +91,27 @@ return {
 				-- disable for .vim files, but it work for another filetypes
 				Rule("a", "a", "-vim")
 			)
+		end,
+	},
+	{
+		"neotest",
+		dependencies = {
+			"thenbe/neotest-playwright",
+			dependencies = {
+				"nvim-telescope/telescope.nvim",
+			},
+		},
+		config = function()
+			require("neotest").setup({
+				adapters = {
+					require("neotest-playwright").adapter({
+						options = {
+							persist_project_selection = true,
+							enable_dynamic_test_discovery = true,
+						},
+					}),
+				},
+			})
 		end,
 	},
 }
