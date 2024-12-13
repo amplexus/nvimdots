@@ -30,5 +30,5 @@ cd $(dirname $0)/..
 stow --target="$HOME" ./nvimdots
 
 nvim --headless -c 'quitall'
-nvim --headless -c 'autocmd User LazyDone quitall'
-nvim --headless "+MasonUpdateAll!" +qa
+nvim --headless "+AstroUpdate" +qa
+nvim --headless "+AstroMasonUpdateAll" +qa
