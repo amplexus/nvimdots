@@ -100,6 +100,7 @@ return {
 			dependencies = {
 				"nvim-telescope/telescope.nvim",
 			},
+			"atm1020/neotest-jdtls",
 		},
 		config = function()
 			require("neotest").setup({
@@ -110,6 +111,7 @@ return {
 							enable_dynamic_test_discovery = true,
 						},
 					}),
+					require("neotest-jdtls"),
 				},
 			})
 		end,

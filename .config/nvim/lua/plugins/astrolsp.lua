@@ -25,6 +25,7 @@ return {
 				},
 				ignore_filetypes = { -- disable format on save for specified filetypes
 					"java",
+					"sh",
 					"python",
 				},
 			},
@@ -44,7 +45,7 @@ return {
 		-- customize language server configuration options passed to `lspconfig`
 		---@diagnostic disable: missing-fields
 		config = {
-			-- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+			clangd = { capabilities = { offsetEncoding = "utf-8" } },
 		},
 		-- customize how language servers are attached
 		handlers = {
