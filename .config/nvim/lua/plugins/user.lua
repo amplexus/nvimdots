@@ -120,4 +120,19 @@ return {
 			})
 		end,
 	},
+	{
+		"dsych/blanket.nvim",
+		config = function()
+			require("blanket").setup({
+				report_path = vim.fn.getcwd() .. "/target/site/jacoco/jacoco.xml",
+			})
+		end,
+		keys = {
+			{
+				"<leader>jc",
+				"<cmd>lua require('blanket').start()<cr>",
+				desc = "Process Jacoco Code Coverage Report",
+			},
+		},
+	},
 }
