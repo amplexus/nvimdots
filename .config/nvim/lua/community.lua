@@ -58,11 +58,11 @@ return {
 	{ import = "astrocommunity.pack.yaml" },
 	{ import = "astrocommunity.pack.html-css" },
 	{ import = "astrocommunity.pack.typescript" },
-	{ import = "astrocommunity.motion.nvim-surround" },    -- https://github.com/kylechui/nvim-surround
-	{ import = "astrocommunity.test.neotest" },            -- https://github.com/nvim-neotest/neotest (js: jest and vitest)
-	{ import = "astrocommunity.test.nvim-coverage" },      -- https://github.com/andythigpen/nvim-coverage (js: jest only)
+	{ import = "astrocommunity.motion.nvim-surround" }, -- https://github.com/kylechui/nvim-surround
+	{ import = "astrocommunity.test.neotest" }, -- https://github.com/nvim-neotest/neotest (js: jest and vitest)
+	{ import = "astrocommunity.test.nvim-coverage" }, -- https://github.com/andythigpen/nvim-coverage (js: jest only)
 	{ import = "astrocommunity.diagnostics.trouble-nvim" }, -- https://github.com/folke/trouble.nvim
-	-- { import = "astrocommunity.completion.copilot-lua-cmp" },
-	{ import = "astrocommunity.completion.codeium-vim" },
+	-- { import = "astrocommunity.completion.copilot-lua-cmp" }, -- free tier
+	{ import = "astrocommunity.completion.codeium-vim" }, -- free tier
 	-- { import = "astrocommunity.completion.tabnine-nvim" }, -- free version only 2-3 words autocomplete
 }
