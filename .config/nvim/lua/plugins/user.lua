@@ -161,4 +161,24 @@ return {
 		-- 	},
 		-- },
 	},
+	{
+		"davvid/telescope-git-selector.nvim",
+		dependencies = { "davvid/telescope-git-grep.nvim" },
+		config = function()
+			require("git_selector").setup({
+				depth = 2, -- Set to -1 to search without limit.
+				follow = true, -- Set to false to disable following symlinks.
+				search = { -- Set to a list or string to specify the locations to search.
+					"../", -- Defaults to searching $HOME.
+				},
+				max_results = 10000, -- Maximum number of results to display.
+				options = { -- Default options passed to inner commands.
+					files = {}, -- Defaults for telescope.builtin.git_files().
+					grep = {}, -- Defaults for git_grep.grep().
+					live_grep = {}, -- Defaults for git_grep.live_grep().
+				},
+			})
+			require("telescope").load_extension("git_selector")
+		end,
+	},
 }
