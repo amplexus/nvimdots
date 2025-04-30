@@ -5,6 +5,7 @@
 ---@type LazySpec
 return {
 	"AstroNvim/astrocommunity",
+	{ import = "astrocommunity.completion.avante-nvim" },
 	{ import = "astrocommunity.test.neotest" },
 	{ import = "astrocommunity.test.nvim-coverage" },
 	{ import = "astrocommunity.pack.lua" },
@@ -23,6 +24,10 @@ return {
 	{
 		"mfussenegger/nvim-jdtls",
 		keys = {
+			{
+				"<leader>j",
+				desc = "JDTLS",
+			},
 			{
 				"<leader>jt",
 				"<cmd>lua require('jdtls').test_class()<cr>",
@@ -57,7 +62,7 @@ return {
 	{ import = "astrocommunity.test.neotest" }, -- https://github.com/nvim-neotest/neotest (js: jest and vitest)
 	{ import = "astrocommunity.test.nvim-coverage" }, -- https://github.com/andythigpen/nvim-coverage (js: jest only)
 	{ import = "astrocommunity.diagnostics.trouble-nvim" }, -- https://github.com/folke/trouble.nvim
-	-- { import = "astrocommunity.completion.copilot-lua-cmp" },
-	{ import = "astrocommunity.completion.codeium-vim" },
+	-- { import = "astrocommunity.completion.copilot-lua-cmp" }, -- free tier
+	{ import = "astrocommunity.completion.codeium-vim" }, -- free tier
 	-- { import = "astrocommunity.completion.tabnine-nvim" }, -- free version only 2-3 words autocomplete
 }

@@ -75,18 +75,18 @@ return {
 			npairs.add_rules(
 				{
 					Rule("$", "$", { "tex", "latex" })
-						-- don't add a pair if the next character is %
-						:with_pair(cond.not_after_regex("%%"))
-						-- don't add a pair if  the previous character is xxx
-						:with_pair(
-							cond.not_before_regex("xxx", 3)
-						)
-						-- don't move right when repeat character
-						:with_move(cond.none())
-						-- don't delete if the next character is xx
-						:with_del(cond.not_after_regex("xx"))
-						-- disable adding a newline when you press <cr>
-						:with_cr(cond.none()),
+					-- don't add a pair if the next character is %
+							:with_pair(cond.not_after_regex("%%"))
+					-- don't add a pair if  the previous character is xxx
+							:with_pair(
+								cond.not_before_regex("xxx", 3)
+							)
+					-- don't move right when repeat character
+							:with_move(cond.none())
+					-- don't delete if the next character is xx
+							:with_del(cond.not_after_regex("xx"))
+					-- disable adding a newline when you press <cr>
+							:with_cr(cond.none()),
 				},
 				-- disable for .vim files, but it work for another filetypes
 				Rule("a", "a", "-vim")
@@ -105,6 +105,7 @@ return {
 			"rcasia/neotest-java",
 		},
 		config = function()
+			-- @diagnostic disable-next-line: missing-fields
 			require("neotest").setup({
 				adapters = {
 					require("neotest-playwright").adapter({
@@ -134,5 +135,57 @@ return {
 				desc = "Process Jacoco Code Coverage Report",
 			},
 		},
+	},
+	{
+		"yetone/avante.nvim",
+		config = function()
+			require("avante").setup({
+				provider = "gemini",
+				gemini = {
+					endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+					model = "gemini-2.0-flash-exp",
+					timeout = 30000, -- Timeout in milliseconds
+					temperature = 0,
+					max_tokens = 4096,
+				},
+				behaviour = {
+					support_paste_from_clipboard = true,
+				},
+			})
+		end,
+		-- keys = {
+		-- 	{
+		-- 		"<leader>ac",
+		-- 		"<cmd>lua require('avante').generate('gemini')<cr>",
+		-- 		desc = "Generate Gemini Code",
+		-- 	},
+		-- },
+	},
+	{
+		"polarmutex/git-worktree.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-telescope/telescope-fzf-native.nvim",
+		},
+	},
+	{
+		"davvid/telescope-git-selector.nvim",
+		dependencies = { "davvid/telescope-git-grep.nvim" },
+		config = function()
+			require("git_selector").setup({
+				depth = 2,       -- Set to -1 to search without limit.
+				follow = true,   -- Set to false to disable following symlinks.
+				search = {       -- Set to a list or string to specify the locations to search.
+					"../../",      -- Defaults to searching $HOME.
+				},
+				max_results = 10000, -- Maximum number of results to display.
+				options = {      -- Default options passed to inner commands.
+					files = {},    -- Defaults for telescope.builtin.git_files().
+					grep = {},     -- Defaults for git_grep.grep().
+					live_grep = {}, -- Defaults for git_grep.live_grep().
+				},
+			})
+			require("telescope").load_extension("git_selector")
+		end,
 	},
 }
