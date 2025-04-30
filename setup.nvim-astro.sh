@@ -11,7 +11,7 @@ rm -rf ~/.cache/nvim
 which composer || sudo apt install composer
 which julia || sudo snap install julia --classic
 
-sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage --output /usr/local/bin/nvim
+sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
 fc-cache -fv | grep NerdFonts
