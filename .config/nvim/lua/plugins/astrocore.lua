@@ -31,6 +31,7 @@ return {
 				signcolumn = "auto", -- sets vim.opt.signcolumn to auto
 				wrap = false, -- sets vim.opt.wrap
 				laststatus = 3, -- sets vim.opt.laststatus to 3
+				clipboard = "unnamedplus", -- sets vim.opt.clipboard to unnamedplus
 			},
 			g = { -- vim.g.<key>
 				-- configure global vim variables (vim.g)
