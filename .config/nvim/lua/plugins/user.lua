@@ -188,4 +188,14 @@ return {
 			require("telescope").load_extension("git_selector")
 		end,
 	},
+	{
+  	"saghen/blink.cmp",
+  	opts = {
+    	completion = {
+    			documentation = {
+    				auto_show = true
+    			}
+    	},
+  	},
+	}
 }
