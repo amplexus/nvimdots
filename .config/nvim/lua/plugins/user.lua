@@ -1,5 +1,4 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
--- Here are some examples:
 
 ---@type LazySpec
 return {
@@ -105,8 +104,8 @@ return {
 			"rcasia/neotest-java",
 		},
 		config = function()
-			-- @diagnostic disable-next-line: missing-fields
 			require("neotest").setup({
+				-- @diagnostic disable-next-line: missing-fields
 				adapters = {
 					require("neotest-playwright").adapter({
 						options = {
@@ -136,31 +135,31 @@ return {
 			},
 		},
 	},
-	{
-		"yetone/avante.nvim",
-		config = function()
-			require("avante").setup({
-				provider = "gemini",
-				gemini = {
-					endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-					model = "gemini-2.0-flash-exp",
-					timeout = 30000, -- Timeout in milliseconds
-					temperature = 0,
-					max_tokens = 4096,
-				},
-				behaviour = {
-					support_paste_from_clipboard = true,
-				},
-			})
-		end,
-		-- keys = {
-		-- 	{
-		-- 		"<leader>ac",
-		-- 		"<cmd>lua require('avante').generate('gemini')<cr>",
-		-- 		desc = "Generate Gemini Code",
-		-- 	},
-		-- },
-	},
+	-- {
+	-- 	"yetone/avante.nvim",
+	-- 	config = function()
+	-- 		require("avante").setup({
+	-- 			provider = "gemini",
+	-- 			gemini = {
+	-- 				endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+	-- 				model = "gemini-2.0-flash-exp",
+	-- 				timeout = 30000, -- Timeout in milliseconds
+	-- 				temperature = 0,
+	-- 				max_tokens = 4096,
+	-- 			},
+	-- 			behaviour = {
+	-- 				support_paste_from_clipboard = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	-- keys = {
+	-- 	-- 	{
+	-- 	-- 		"<leader>ac",
+	-- 	-- 		"<cmd>lua require('avante').generate('gemini')<cr>",
+	-- 	-- 		desc = "Generate Gemini Code",
+	-- 	-- 	},
+	-- 	-- },
+	-- },
 	{
 		"polarmutex/git-worktree.nvim",
 		dependencies = {

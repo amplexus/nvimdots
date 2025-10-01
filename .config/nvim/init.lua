@@ -18,3 +18,7 @@ end
 require("lazy_setup")
 require "polish"
 -- require("telescope").load_extension("git_worktree")
+-- The following should be used in conjunction with kitty opacity 0.8 or similar
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.opt.termguicolors = true

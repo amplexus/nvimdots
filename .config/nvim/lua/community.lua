@@ -5,7 +5,8 @@
 ---@type LazySpec
 return {
 	"AstroNvim/astrocommunity",
-	{ import = "astrocommunity.completion.avante-nvim" },
+	-- { import = "astrocommunity.completion.avante-nvim" },
+	-- { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
 	{ import = "astrocommunity.test.neotest" },
 	{ import = "astrocommunity.test.nvim-coverage" },
 	{ import = "astrocommunity.pack.lua" },
@@ -18,6 +19,13 @@ return {
 	{ import = "astrocommunity.colorscheme.tokyonight-nvim" },
 	{ import = "astrocommunity.colorscheme.monokai-pro-nvim" },
 	{ import = "astrocommunity.colorscheme.nord-nvim" },
+	{ import = "astrocommunity.color.transparent-nvim",
+		config = function()
+			require("transparent").setup({
+				enable = true,
+			})
+		end,
+	},
 	{
 		import = "astrocommunity.pack.java",
 	},
