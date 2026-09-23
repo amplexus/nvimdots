@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason
 
@@ -21,32 +21,7 @@ return {
         "debugpy",
 
         -- install any other package
-        "taplo",
-        "jdtls",
-        "java-test",
-        "java-debug-adapter",
- 			  "eslint-lsp",
- 			  "lua-language-server",
- 			  "emmet-ls",
- 			  "css-lsp",
- 			  "html-lsp",
- 			  "vtsls",
- 			  "yaml-language-server",
-        "js-debug-adapter",
- 			  "tailwindcss-language-server",
- 			  "bash-language-server",
- 			  "shellcheck",
- 			  "shfmt",
- 			  "json-lsp",
- 			  "basedpyright",
- 			  "black",
- 			  "clangd",
- 			  "codelldb",
- 			  "lemminx",
- 			  "marksman",
- 			  "dockerfile-language-server",
- 			  "docker-compose-language-service",
- 			  "prettierd",
+        "tree-sitter-cli",
       },
     },
   },

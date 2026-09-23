@@ -1,5 +1,3 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -45,8 +43,6 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        laststatus = 3,
-        clipboard = "unnamedplus",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -60,11 +56,8 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+
         -- navigate buffer tabs
-        ["<Leader>bn"] = { ":tabnew<cr>", desc = "New tab" },
-        ["<S-Tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
-        ["<Tab>"] = { ":bnext<cr>", desc = "Next buffer" },
-        ["<C-n>"] = { ":Neotree toggle<cr>", desc = "Neotree toggle" },
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
@@ -77,6 +70,10 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+        ["<Leader>bn"] = { ":tabnew<cr>", desc = "New tab" },
+        ["<S-Tab>"] = { ":bprev<cr>", desc = "Previous buffer" },
+        ["<Tab>"] = { ":bnext<cr>", desc = "Next buffer" },
+        ["<C-n>"] = { ":Neotree toggle<cr>", desc = "Neotree toggle" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
