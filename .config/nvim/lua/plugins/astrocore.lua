@@ -75,6 +75,9 @@ return {
         ["<Tab>"] = { ":bnext<cr>", desc = "Next buffer" },
         ["<C-n>"] = { ":Neotree toggle<cr>", desc = "Neotree toggle" },
 
+        ["<leader>cc" ] = { ":ClaudeCode<cr>"},
+        ["<leader>cf" ] = { ":ClaudeCodeFocus<cr>"},
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
